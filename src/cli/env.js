@@ -1,23 +1,18 @@
 const VARIABLE_RSS_PREFIX = 'RSS_';
-const VARIABLE_PREFIX_LENGTH = 4;
-
 const RESULT_STRING_DELIMITER = '; ';
 
-const getEnvVariablePrefix = (envVariableName) => envVariableName.slice(0, VARIABLE_PREFIX_LENGTH);
-
-const getRSSEnvVariablePairString = (envVariableName, envVariablesObject) => `${envVariableName}=${envVariablesObject[envVariableName]}`;
-
-const isRSSEnvVariable = (envVariableName) => getEnvVariablePrefix(envVariableName) === VARIABLE_RSS_PREFIX;
+const isRSSEnvVariable = (envVariableName) => envVariableName.startsWith(VARIABLE_RSS_PREFIX);
+const getEnvVariablePairString = (envVariableName, envVariablesObject) => `${envVariableName}=${envVariablesObject[envVariableName]}`;
 
 const parseEnv = () => {
-  const envVariablesWithRSSPrefix = [];
+  const envRSSVariablesPairsStrings  = [];
   const envVariablesObject = process.env;
 
   for (let envVariableName in envVariablesObject) {
-    if (isRSSEnvVariable(envVariableName)) envVariablesWithRSSPrefix.push(getRSSEnvVariablePairString(envVariableName, envVariablesObject));
+    if (isRSSEnvVariable(envVariableName)) envRSSVariablesPairsStrings.push(getEnvVariablePairString(envVariableName, envVariablesObject));
   }
 
-  console.log(envVariablesWithRSSPrefix.join(RESULT_STRING_DELIMITER));
+  console.log(envRSSVariablesPairsStrings.join(RESULT_STRING_DELIMITER));
 };
 
 parseEnv();
