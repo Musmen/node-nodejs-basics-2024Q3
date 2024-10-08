@@ -15,7 +15,7 @@
     "fs:delete": "node src/fs/delete.js",
     "fs:list": "node src/fs/list.js",
     "fs:read": "node src/fs/read.js",
-    "fs:rename": "node src/fs/rename.js",
+    "fs:rename": "node src/fs/rename.mjs",
     "hash": "node src/hash/calcHash.js",
     "modules": "node src/modules/esm.mjs",
     "streams:read": "node src/streams/read.js",
