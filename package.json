@@ -12,7 +12,7 @@
     "cp": "node src/cp/cp.js",
     "fs:copy": "node src/fs/copy.mjs",
     "fs:create": "node src/fs/create.mjs",
-    "fs:delete": "node src/fs/delete.js",
+    "fs:delete": "node src/fs/delete.mjs",
     "fs:list": "node src/fs/list.js",
     "fs:read": "node src/fs/read.js",
     "fs:rename": "node src/fs/rename.mjs",
