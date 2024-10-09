@@ -18,7 +18,7 @@
     "fs:rename": "node src/fs/rename.mjs",
     "hash": "node src/hash/calcHash.mjs",
     "modules": "node src/modules/esm.mjs",
-    "streams:read": "node src/streams/read.js",
+    "streams:read": "node src/streams/read.mjs",
     "streams:transform": "node src/streams/transform.js",
     "streams:write": "node src/streams/write.js",
     "wt": "node src/wt/main.js",
