@@ -1,15 +1,18 @@
-import { writeFile } from 'fs/promises';
+import { writeFile as fsPromisesWriteFile } from 'fs/promises';
 
-import { getFilePath } from '../common/helpers.mjs';
-import { ERRORS_MESSAGES, MESSAGES, PATH } from '../common/constants.mjs';
+import { getFilePath } from './common/helpers.mjs';
+import { ERROR_MESSAGE } from './common/constants.mjs';
+
+const CONTENT_TO_WRITE = 'I am fresh and young';
+const FILE_NAME = 'fresh.txt';
 
 const create = async () => {
-  const outputFilePath = getFilePath(import.meta.dirname, PATH.FS_OUTPUT_FILE_NAME);
+  const outputFilePath = getFilePath(import.meta.dirname, FILE_NAME);
   
   try {
-    await writeFile(outputFilePath, MESSAGES.FS_FRESH, { flag: 'wx' })
+    await fsPromisesWriteFile(outputFilePath, CONTENT_TO_WRITE, { flag: 'wx' });
   } catch { 
-    throw new Error(ERRORS_MESSAGES.FS_FAILED); 
+    throw new Error(ERROR_MESSAGE); 
   }
 };
 

@@ -1,17 +1,17 @@
-import { rm as fsRemove } from 'fs/promises';
+import { rm as fsPromisesRemove } from 'fs/promises';
 
-import { getFilePath } from '../common/helpers.mjs';
-import { ERRORS_MESSAGES } from '../common/constants.mjs';
+import { getFilePath } from './common/helpers.mjs';
+import { ERROR_MESSAGE } from './common/constants.mjs';
 
-const fileName = 'fileToRemove.txt';
+const FILE_NAME = 'fileToRemove.txt';
 
 const remove = async () => {
-  const filePath = getFilePath(import.meta.dirname, fileName);
+  const filePath = getFilePath(import.meta.dirname, FILE_NAME);
 
   try {
-    await fsRemove(filePath);
+    await fsPromisesRemove(filePath);
   } catch {
-    throw new Error(ERRORS_MESSAGES.FS_FAILED);
+    throw new Error(ERROR_MESSAGE);
   }
 };
 
