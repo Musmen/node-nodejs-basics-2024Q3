@@ -13,7 +13,7 @@
     "fs:copy": "node src/fs/copy.mjs",
     "fs:create": "node src/fs/create.mjs",
     "fs:delete": "node src/fs/delete.mjs",
-    "fs:list": "node src/fs/list.js",
+    "fs:list": "node src/fs/list.mjs",
     "fs:read": "node src/fs/read.js",
     "fs:rename": "node src/fs/rename.mjs",
     "hash": "node src/hash/calcHash.js",
