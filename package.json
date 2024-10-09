@@ -16,7 +16,7 @@
     "fs:list": "node src/fs/list.mjs",
     "fs:read": "node src/fs/read.mjs",
     "fs:rename": "node src/fs/rename.mjs",
-    "hash": "node src/hash/calcHash.js",
+    "hash": "node src/hash/calcHash.mjs",
     "modules": "node src/modules/esm.mjs",
     "streams:read": "node src/streams/read.js",
     "streams:transform": "node src/streams/transform.js",
