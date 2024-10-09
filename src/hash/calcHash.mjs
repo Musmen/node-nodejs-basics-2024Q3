@@ -4,9 +4,9 @@ import { open as fsPromisesOpen } from 'fs/promises';
 import { createHash as cryptoCreateHash } from 'crypto';
 
 import { getPath } from '../common/helper.mjs';
+import { FILES_DIR_NAME } from '../common/constants.mjs';
 
 const HASH_TYPE = 'sha256';
-const SUB_DIR_NAME = 'files';
 const INPUT_FILE_PATH = 'fileToCalculateHashFor.txt';
 
 class ConsoleLoggerStream extends Writable {
@@ -22,7 +22,7 @@ class ConsoleLoggerStream extends Writable {
 const consoleLoggerStream = new ConsoleLoggerStream();
 
 const calculateHash = async () => {
-  const inputFilePath = getPath(import.meta.dirname, SUB_DIR_NAME, INPUT_FILE_PATH);
+  const inputFilePath = getPath(import.meta.dirname, FILES_DIR_NAME, INPUT_FILE_PATH);
   const fd = await fsPromisesOpen(inputFilePath);
   const inputStream = fd.createReadStream();
 
