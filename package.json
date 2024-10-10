@@ -23,7 +23,7 @@
     "streams:write": "node src/streams/write.mjs",
     "wt": "node src/wt/main.js",
     "zip:compress": "node src/zip/compress.mjs",
-    "zip:decompress": "node src/zip/decompress.js"
+    "zip:decompress": "node src/zip/decompress.mjs"
   },
   "repository": {
     "type": "git",
