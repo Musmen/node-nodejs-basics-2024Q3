@@ -21,7 +21,7 @@
     "streams:read": "node src/streams/read.mjs",
     "streams:transform": "node src/streams/transform.mjs",
     "streams:write": "node src/streams/write.mjs",
-    "wt": "node src/wt/main.js",
+    "wt": "node src/wt/main.mjs",
     "zip:compress": "node src/zip/compress.mjs",
     "zip:decompress": "node src/zip/decompress.mjs"
   },
