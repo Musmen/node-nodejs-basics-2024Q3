@@ -11,6 +11,7 @@ const write = async () => {
   const filePath = getPath(import.meta.dirname, FILES_DIR_NAME, OUTPUT_FILE_NAME);
   const fd = await fsPromisesOpen(filePath, 'w');
   const writingFileStream = fd.createWriteStream();
+
   await pipeline(
     stdin,
     writingFileStream
@@ -18,5 +19,3 @@ const write = async () => {
 };
 
 await write();
-
-// write.js - implement function that writes process.stdin data into file fileToWrite.txt content using Writable Stream
